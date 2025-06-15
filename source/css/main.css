@@ -484,7 +484,7 @@
 }
 .code-content {
     font-size: 13px;
-    line-height: 2;
+    line-height: 1.5;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 50px 30px 20px;
@@ -547,9 +547,9 @@ body::-webkit-scrollbar-track {
     padding-left: 10px !important;
     text-align: right;
     vertical-align: top;
-    width: 50px !important;
-    min-width: 50px;
-    max-width: 50px;
+    width: 35px !important;
+    min-width: 35px;
+    max-width: 35px;
     user-select: none;
 }
 .icon {
