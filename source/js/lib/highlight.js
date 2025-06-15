@@ -13,8 +13,15 @@ mixins.highlight = {
         highlight() {
             let codes = document.querySelectorAll("pre");
             for (let i of codes) {
-                let code = i.textContent;
-                let language = [...i.classList, ...i.firstChild.classList][0] || "plaintext";
+                let code = i.innerText;
+                // Fix: look at parent <figure> for language class (e.g. "highlight python")
+                let language = "plaintext";
+                let parent = i.closest("figure");
+                if (parent) {
+                    let classes = [...parent.classList];
+                    let langClass = classes.find(c => c !== "highlight");
+                    if (langClass) language = langClass;
+                }
                 let highlighted;
                 try {
                     highlighted = hljs.highlight(code, { language }).value;

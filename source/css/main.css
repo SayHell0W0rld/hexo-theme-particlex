@@ -485,9 +485,12 @@
 .code-content {
     font-size: 13px;
     line-height: 2;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding: 50px 30px 20px;
     white-space: pre;
+    width: 100%;
+    box-sizing: border-box;
 }
 .comment iframe,
 body::-webkit-scrollbar-track {
@@ -533,14 +536,21 @@ body::-webkit-scrollbar-track {
     opacity: 0;
 }
 .hljs-ln-code {
-    padding-left: 20px !important;
+    padding-left: 15px !important;
+    white-space: pre;
+    overflow-x: auto;
 }
 .hljs-ln-numbers {
-    border-right: 1px solid #ccc;
-    color: #ccc;
+    border-right: 1px solid #ddd;
+    color: #999;
     padding-right: 10px !important;
+    padding-left: 10px !important;
     text-align: right;
     vertical-align: top;
+    width: 50px !important;
+    min-width: 50px;
+    max-width: 50px;
+    user-select: none;
 }
 .icon {
     color: #5c6b72;
@@ -772,6 +782,8 @@ pre {
     margin: 25px 0;
     overflow: hidden;
     white-space: normal;
+    width: 100%;
+    box-sizing: border-box;
 }
 pre,
 code,
@@ -779,6 +791,10 @@ code,
 .input,
 .language {
     font-family: "Fira Code", "Noto Sans SC", monospace;
+}
+.hljs-ln {
+    width: 100%;
+    table-layout: fixed;
 }
 table:not(.hljs-ln) {
     margin: 15px 0;
@@ -841,6 +857,9 @@ ol li {
         font-size: 52px;
         font-weight: bold;
         margin-bottom: 10px;
+        font-family: "ZCOOL KuaiLe", "Noto Sans SC", cursive;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        letter-spacing: 2px;
     }
     #home-head #home-info .info .wrap h3 {
         font-size: 24px;
